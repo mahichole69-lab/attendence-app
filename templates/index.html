@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Attendance Management System</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div>
+            <h1>Attendance Management System</h1>
+            <p>Student Registration & Attendance Tracking</p>
+        </div>
+    </header>
+
+
+    <main class="container">
+
+        <!-- Student Registration -->
+
+        <section class="card">
+
+            <h2>Student Registration</h2>
+
+            <form id="studentForm">
+
+                <div class="form-grid">
+
+                    <div>
+                        <label>Roll Number</label>
+                        <input
+                            type="text"
+                            id="rollNo"
+                            placeholder="Enter roll number"
+                            required
+                        >
+                    </div>
+
+
+                    <div>
+                        <label>Student Name</label>
+                        <input
+                            type="text"
+                            id="studentName"
+                            placeholder="Enter student name"
+                            required
+                        >
+                    </div>
+
+
+                    <div>
+                        <label>Email</label>
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Enter email"
+                        >
+                    </div>
+
+                </div>
+
+                <button type="submit">
+                    Register Student
+                </button>
+
+            </form>
+
+            <p id="studentMessage"></p>
+
+        </section>
+
+
+        <!-- Mark Attendance -->
+
+        <section class="card">
+
+            <h2>Mark Attendance</h2>
+
+            <div class="form-grid">
+
+                <div>
+
+                    <label>Select Student</label>
+
+                    <select id="attendanceStudent">
+
+                        <option value="">
+                            Select Student
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div>
+
+                    <label>Date</label>
+
+                    <input
+                        type="date"
+                        id="attendanceDate"
+                    >
+
+                </div>
+
+
+                <div>
+
+                    <label>Status</label>
+
+                    <select id="attendanceStatus">
+
+                        <option value="Present">
+                            Present
+                        </option>
+
+                        <option value="Absent">
+                            Absent
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <button id="markAttendanceBtn">
+                Save Attendance
+            </button>
+
+            <p id="attendanceMessage"></p>
+
+        </section>
+
+
+        <!-- Students -->
+
+        <section class="card">
+
+            <h2>Registered Students</h2>
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Roll No</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="studentsTableBody">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- Attendance Summary -->
+
+        <section class="card">
+
+            <h2>Attendance Percentage</h2>
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Roll No</th>
+                            <th>Name</th>
+                            <th>Total Classes</th>
+                            <th>Present</th>
+                            <th>Attendance %</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="summaryTableBody">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- Date-wise Records -->
+
+        <section class="card">
+
+            <h2>Date-wise Attendance Records</h2>
+
+            <div class="date-filter">
+
+                <input
+                    type="date"
+                    id="recordDate"
+                >
+
+                <button id="loadRecordsBtn">
+                    Load Records
+                </button>
+
+                <button id="loadAllRecordsBtn">
+                    Show All
+                </button>
+
+            </div>
+
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Date</th>
+                            <th>Roll No</th>
+                            <th>Name</th>
+                            <th>Status</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="recordsTableBody">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            Attendance Management System |
+            AWS CI/CD Project
+        </p>
+
+    </footer>
+
+
+    <script src="/static/script.js"></script>
+
+</body>
+</html>
