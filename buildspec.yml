@@ -1,0 +1,26 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.11
+
+  pre_build:
+    commands:
+      - echo Installing dependencies...
+      - pip install -r requirements.txt
+
+  build:
+    commands:
+      - echo Build phase started...
+      - python -m py_compile app.py
+
+  post_build:
+    commands:
+      - echo Build completed successfully!
+
+artifacts:
+  files:
+    - '**/*'
+    - '!venv/**/*'
+    - '!data/**/*'
